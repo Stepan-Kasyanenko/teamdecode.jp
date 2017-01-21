@@ -1,0 +1,51 @@
+<md-sidenav md-colors="{background:'primary-500'}" class="md-sidenav-right md-whiteframe-4dp right-sidenav" md-component-id="task-form">
+	<md-toolbar layout="row">
+		<md-button ng-click="vm.toggle(false)" class="md-primary btn-close" aria-label="Close" md-colors="{color:'primary-50'}">
+				<md-tooltip md-direction="bottom">
+					Close
+				</md-tooltip>
+				<span class="b-size" data-size="26">
+		  		<i class="icons8-delete-2"></i>
+				</span>
+			<small>ESC</small>
+		</md-button>
+		<h1 layout="column" layout-align="center center" class="md-toolbar-tools" ng-switch="vm.isNew"><span ng-switch-when="true">
+			Create new task
+			</span>
+			<span ng-switch-when="false">
+			Edit task
+			</span>
+		</h1>
+	</md-toolbar>
+	<md-content layout-align="center center" layout="row" md-colors="{background:'primary-500'}" layout-padding>
+		<form name="task_form" class="task-form">
+			<md-input-container layout-fill>
+				<label md-colors="{color:'primary-50'}">Task name</label>
+				<input flex md-colors="{color:'primary-50',borderColor:'primary-50'}" type="text"
+							 md-maxlength="100"
+							 ng-model="vm.task.Task.title" md-autofocus required name="title">
+				<div ng-messages="task_form.title.$error">
+					<div ng-message="required">Task name is required</div>
+				</div>
+			</md-input-container>
+			<md-input-container layout-fill>
+				<label md-colors="{color:'primary-50'}">Description</label>
+				<textarea ng-model="vm.task.Task.description" required md-maxlength="1000"
+									flex md-colors="{color:'primary-50',borderColor:'primary-50'}"
+							  	name="description"></textarea>
+				<div ng-messages="task_form.description.$error">
+					<div ng-message="required">Task description is required</div>
+				</div>
+			</md-input-container>
+
+			<md-button use-ajax-click="vm.addTask()" ng-disabled="task_form.$invalid" aria-label="Add task" type="submit" class="md-fab btn-add-task">
+						<md-tooltip md-direction="top">
+							Add task
+						</md-tooltip>
+						<span class="b-size" data-size="26">
+							<i class="icons8-checkmark"></i>
+						</span>
+			</md-button>
+		</form>
+	</md-content>
+</md-sidenav>

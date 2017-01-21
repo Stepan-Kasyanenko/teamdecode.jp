@@ -1,0 +1,20 @@
+app-account .tool-bar{
+	margin-top:20px;
+}
+app-account .avatar-border{
+	border:1px solid white;
+	border-radius:50%;
+	padding:3px;
+	height:50px;
+	width:50px;
+}
+app-account .name-padding{
+	margin-left:20px;
+}
+
+.app-session-logout-acc {
+	right: 30px;
+	top: 35px;
+	bottom: initial;
+	left: initial;
+}

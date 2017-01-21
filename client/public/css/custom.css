@@ -1,0 +1,75 @@
+.b-size[data-size="26"]{ font-size:26px }
+.b-size[data-size="18"]{ font-size:18px }
+.b-size[data-size="100"]{ font-size:100px }
+.md-toast-info .md-toast-content{
+	background:#267300 !important;
+}
+.md-toast-warning .md-toast-content{
+	background:#736000 !important;
+}
+.md-toast-error .md-toast-content{
+	background:#730000 !important;
+}
+/*For loading bar*/
+#loading-bar .bar{
+	background:#6b6b99 !important;
+	height:3px !important;
+}
+/* Fancy blur effect */
+#loading-bar .peg{
+	-moz-box-shadow:#6b6b99 1px 0 6px 1px !important;
+	-ms-box-shadow:#6b6b99 1px 0 6px 1px !important;
+	-webkit-box-shadow:#6b6b99 1px 0 6px 1px !important;
+	box-shadow:#6b6b99 1px 0 6px 1px !important;
+}
+/*Loading stub*/
+.loading-main{
+	font-size:25px;
+	white-space:nowrap;
+	color:#6b6b99;
+	position:absolute;
+	top:49%;
+	left:45%;
+}
+/*Fix backdrop for sidenav*/
+md-backdrop.md-opaque.ng-enter{
+	opacity:0.48;
+}
+
+@media (max-height: 600px) {
+	.hidden-xs-v {
+		display: none !important;
+	}
+}
+@media (min-height: 601px) and (max-height: 900px) {
+	.hidden-sm-v {
+		display: none !important;
+	}
+}
+@media (min-height: 901px) and (max-height: 1199px) {
+	.hidden-md-v {
+		display: none !important;
+	}
+}
+@media (min-height: 1200px) {
+	.hidden-lg-v {
+		display: none !important;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.7);
+}
+
+
+

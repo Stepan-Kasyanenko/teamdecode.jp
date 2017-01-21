@@ -1,0 +1,15 @@
+<md-list md-colors="{background:'primary-500'}" flex>
+	<md-list-item class="secondary-button-padding md-list-project-action">
+		<p><strong>Projects</strong></p>
+		<app-project-add></app-project-add>
+	</md-list-item>
+	<md-list-item class="project-item"
+								ng-class="{'project-item-selected':item.Project.id===vm.selectedID}"
+								ng-repeat="item in ::vm.projects|orderBy:'Project.title'"
+								ng-click="::vm.select(item.Project)">
+		<div class="md-list-item-text" layout="column">
+			<p><strong>{{ ::item.Project.title }}</strong></p>
+			<p class="md-secondary"><strong>{{ ::item.Project.task_count}}</strong></p>
+		</div>
+	</md-list-item>
+</md-list>

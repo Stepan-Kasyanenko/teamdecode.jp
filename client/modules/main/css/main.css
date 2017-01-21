@@ -1,0 +1,33 @@
+.btn-action, .btn-close{
+	width:20px;
+	min-width:20px;
+	padding:0px;
+	margin-right:0px;
+	margin-left:0px;
+}
+.btn-close{
+	width:26px;
+	min-width:26px;
+	white-space:normal;
+	line-height:10px;
+	text-align:center;
+	margin-left:10px;
+}
+.btn-close small{
+	font-size:9px;
+}
+.left-sidenav{
+	width:390px;
+	overflow:hidden;
+	min-width:390px;
+}
+.left-sidenav .project-view{
+	height:75%;
+	width:360px;
+	overflow:auto;
+}
+.right-sidenav{
+	min-width:320px;
+	width:100%;
+	max-width:500px;
+}

@@ -1,0 +1,23 @@
+<md-sidenav class="md-sidenav-left left-sidenav"
+						md-component-id="left-menu"
+						md-is-locked-open="$mdMedia('gt-sm')"
+						md-whiteframe="4"
+						layout="column"
+						layout-fill
+						md-colors="{background:'primary-500'}">
+	<md-toolbar md-scroll-shrink>
+		<app-account></app-account>
+	</md-toolbar>
+	<md-content md-colors="{background:'primary-500'}" layout-fill layout-padding>
+		<div class="project-view" ui-view></div>
+	</md-content>
+	<app-session-logout class="hidden-xs-v"></app-session-logout>
+</md-sidenav>
+<md-button class="md-icon-button md-button md-ink-ripple hide-gt-sm" type="button" hide-gt-md aria-label="Show Menu">
+	<md-tooltip md-direction="bottom">
+		Show Menu
+	</md-tooltip>
+	<md-icon md-colors="{color:'accent-A100'}" ng-click="vm.openMenu('left')" role="button" tabindex="0">
+		<i class="fa fa-2x fa-bars"></i>
+	</md-icon>
+</md-button>

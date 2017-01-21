@@ -1,0 +1,44 @@
+<md-sidenav md-colors="{background:'primary-500'}" class="md-sidenav-right md-whiteframe-4dp right-sidenav" md-component-id="project">
+	<md-toolbar layout="row">
+		<md-button ng-click="vm.toggle(false)" class="md-primary btn-close" aria-label="close" md-colors="{color:'primary-50'}">
+				<md-tooltip md-direction="bottom">
+					Close
+				</md-tooltip>
+				<span class="b-size" data-size="26">
+		  		<i class="icons8-delete-2"></i>
+				</span>
+			<small>ESC</small>
+		</md-button>
+		<h1 layout="column" layout-align="center center" class="md-toolbar-tools" ng-switch="vm.isNew">
+			<span ng-switch-when="true">
+			Create new project
+			</span>
+			<span ng-switch-when="false">
+			Edit project
+			</span>
+		</h1>
+	</md-toolbar>
+	<md-content layout-align="center center" layout="row" md-colors="{background:'primary-500'}" layout-padding>
+		<form name="project_form" class="project-form">
+			<md-input-container layout-fill>
+				<label md-colors="{color:'primary-50'}">Project name</label>
+				<input ng-model="vm.project.Project.title" md-autofocus required name="title"
+							 flex md-colors="{color:'primary-50',borderColor:'primary-50'}" type="text"
+							 md-maxlength="100">
+				<div ng-messages="project_form.title.$error">
+					<div ng-message="required">Project name is required</div>
+				</div>
+			</md-input-container>
+			<md-button use-ajax-click="vm.addProject()" ng-disabled="project_form.$invalid" class="md-fab btn-add-project" type="submit" aria-label="Add project">
+						<md-tooltip md-direction="top">
+							Add project
+						</md-tooltip>
+						<span class="b-size" data-size="26">
+							<i class="icons8-checkmark"></i>
+						</span>
+			</md-button>
+		</form>
+
+	</md-content>
+
+</md-sidenav>

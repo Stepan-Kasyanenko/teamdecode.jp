@@ -1,0 +1,13 @@
+app-session-logout {
+	position:absolute;
+	bottom:25px;
+	left:30px;
+}
+app-session-logout .btn-logout{
+	text-transform:none;
+	font-weight:600;
+	width: 60px;
+	min-width: 60px;
+	margin: 0px;
+	padding: 0px;
+}

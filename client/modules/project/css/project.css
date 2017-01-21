@@ -1,0 +1,30 @@
+app-project-list .project-item{
+	border-radius:4px;
+	height:40px;
+}
+app-project-list .project-item .md-secondary-container{
+	height:40px;
+}
+app-project-list .project-item-selected{
+	background-color:#6b6b99 !important;
+}
+app-project-list .md-list-project-action{
+	padding-right:10px !important;
+}
+app-project-list .md-list-project-action p{
+	font-size:12px;
+}
+app-project-form .btn-add-project{
+	position:fixed;
+	bottom:36px;
+	right:50px;
+}
+app-project-form .project-form{
+	width:340px;
+}
+app-project-menu .search-button{
+	border:0px;
+}
+app-project-menu .search-button:focus{
+	outline:none;
+}

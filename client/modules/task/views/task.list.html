@@ -1,0 +1,49 @@
+<!--Trying virtual repeat-->
+<!--<md-virtual-repeat-container style="height:100%;">-->
+<!--<md-content layout-align="center center" layout="column">-->
+<!--<div md-virtual-repeat="item in vm.dynamicTasks" md-on-demand style="width:70%;">-->
+<!--<md-subheader ng-if="vm.isAnotherDate($index)" md-colors="{color:'accent-A100'}" class="md-primary task-group">{{item.Task.created_at_day}}</md-subheader>-->
+<!--{{item.Task.id}}-->
+<!--</div>-->
+<!--<div ng-if="vm.loading && !vm.noMoreData">-->
+<!--Data loading....-->
+<!--</div>-->
+<!--</md-content>-->
+<!--</md-virtual-repeat-container>-->
+
+<md-virtual-repeat-container layout-fill  ng-if="vm.tasks.rows && vm.tasks.rows.length">
+	<md-content layout-align="center center" layout="column">
+		<section ng-repeat="(key,value) in vm.tasks.rows|groupBy:'Task.created_at_day'" class="task">
+			<md-subheader md-colors="{color:'accent-A100'}" class="md-primary task-group">{{::key|moment_calendar}}</md-subheader>
+			<md-card layout="row" layout-padding md-whiteframe="6" class="task-item">
+				<md-list layout-fill>
+					<md-list-item ng-repeat="item in value" ng-click="vm.select(item)">
+						<md-button aria-label="Complete task" ng-click="vm.completeTask(item)" class="task-button">
+							<md-tooltip md-direction="top">
+								Complete task
+							</md-tooltip>
+							<i class="fa fa-2x fa-circle-o task-circle"></i>
+						</md-button>
+						<use-divider-v class="task-divider-v"></use-divider-v>
+						<div class="md-list-item-text task-text">
+							<p>{{ ::item.Task.title }}</p>
+						</div>
+						<md-divider class="task-divider-h" ng-if="!$last"></md-divider>
+					</md-list-item>
+				</md-list>
+			</md-card>
+		</section>
+		<section layout-fill layout-align="center center" layout="column">
+			<md-button class="md-accent" ng-if="!vm.noMoreData" use-ajax-click="vm.loadMoreByButton()">Load more</md-button>
+		</section>
+	</md-content>
+</md-virtual-repeat-container>
+
+<md-content layout-align="center center" layout="column" layout-padding layout-fill ng-if="vm.tasks.rows && !vm.tasks.rows.length">
+	<md-icon md-colors="{color:'accent-A100'}" class="task-not-found">
+		<span>
+			<i class="icons8-todo-list"></i>
+		</span>
+		<div>Have a good day</div>
+	</md-icon>
+</md-content>

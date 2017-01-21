@@ -1,0 +1,33 @@
+<md-sidenav md-colors="{background:'primary-500'}" class="md-sidenav-right md-whiteframe-4dp right-sidenav" md-component-id="task-view">
+	<md-toolbar layout="row">
+		<md-button ng-click="vm.toggle(false)" class="md-primary btn-close" aria-label="Close" md-colors="{color:'primary-50'}">
+				<md-tooltip md-direction="left">
+					Close
+				</md-tooltip>
+				<span class="b-size" data-size="26">
+		  		<i class="icons8-delete-2"></i>
+				</span>
+			<small>ESC</small>
+		</md-button>
+		<h1 layout="column" layout-align="center center" class="md-toolbar-tools">{{::vm.task.Task.title}}</h1>
+		<md-button ng-click="vm.editTask()" class="md-primary btn-action-task" aria-label="Edit task">
+				<md-tooltip md-direction="bottom">
+					Edit task
+				</md-tooltip>
+				<span class="b-size" data-size="18">
+		  		<i class="icons8-edit"></i>
+				</span>
+		</md-button>
+		<md-button ng-click="vm.deleteTask()" class="md-primary btn-action-task" aria-label="Delete task">
+				<md-tooltip md-direction="bottom">
+					Delete task
+				</md-tooltip>
+				<span class="b-size" data-size="18">
+		  		<i class="icons8-delete"></i>
+				</span>
+		</md-button>
+	</md-toolbar>
+	<md-content  layout-align="center center" layout="row" md-colors="{background:'primary-500'}" layout-padding>
+		<p class="task-view">{{::vm.task.Task.description}}</p>
+	</md-content>
+</md-sidenav>

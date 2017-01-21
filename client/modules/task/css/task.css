@@ -1,0 +1,72 @@
+app-project-task-list{
+	width:100%;
+	height:100%;
+}
+
+app-project-task-list .task-not-found{
+	width:300px;
+	height:300px;
+	font-size:250px;
+}
+app-project-task-list .task-not-found div{
+	font-size:35px;
+	white-space:nowrap;
+}
+app-project-task-list .task{
+	width:70%;
+}
+app-project-task-list .task .task-item{
+	border-radius:6px;
+}
+app-project-task-list .task .task-group{
+	font-size:16px;
+}
+app-project-task-list .task .task-group .md-subheader-inner{
+	padding-bottom:0px;
+}
+app-project-task-list .task .task-circle{
+	vertical-align:middle;
+	color:#bdbdbd;
+}
+app-project-task-list .task .task-text{
+	font-weight:600;
+}
+app-project-task-list .task .task-divider-v{
+	margin-right:15px;
+	margin-left:15px;
+	height:40px;
+}
+app-project-task-list .task .task-divider-h{
+	left:5%;
+	width:90%;
+}
+app-project-task-list .task .task-button{
+	width:40px;
+	min-width:40px;
+}
+
+app-project-task-view .btn-action-task{
+	color:#51555e !important;
+	width:26px;
+	min-width:26px;
+	white-space:normal;
+	line-height:10px;
+	text-align:center;
+	margin:10px;
+}
+app-project-task-view .task-view{
+	width:340px;
+}
+
+app-task-add .btn-add-task{
+	position:fixed;
+	bottom:36px;
+	right:50px;
+}
+app-project-task-form .btn-add-task{
+	position:fixed;
+	bottom:36px;
+	right:50px;
+}app-project-task-form .task-form{
+	 width:340px;
+ }
