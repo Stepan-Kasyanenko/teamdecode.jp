@@ -6,14 +6,10 @@
 	angular.module("app.task")
 		.controller("TaskAddController",TaskAddController);
 
-	TaskAddController.$inject=["TaskRouteService"];
+	TaskAddController.$inject=["TaskConstant"];
 
-	function TaskAddController(TaskRouteService){
+	function TaskAddController(TaskConstant){
 		var vm=this;
-		vm.onAdd=onAdd;
-
-		function onAdd(){
-			TaskRouteService.new();
-		};
+		vm.hreafNew = TaskConstant.route.new;
 	}
 })(window,window.angular);
