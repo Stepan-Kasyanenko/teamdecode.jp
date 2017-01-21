@@ -5,6 +5,8 @@ app-project-task-list{
 app-project-task-list .task-not-found-content
 {
 	overflow-y:hidden;
+	height:80% !important;
+	min-height:80% !important;
 }
 app-project-task-list .task-not-found{
 	width:300px;
