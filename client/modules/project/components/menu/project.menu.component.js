@@ -6,9 +6,9 @@
 	angular.module("app.project")
 		.controller("ProjectMenuController",ProjectMenuController);
 
-	ProjectMenuController.$inject=["$stateParams","ProjectService","ProjectRouteService","$mdDialog","TaskConstant"];
+	ProjectMenuController.$inject=["$stateParams","ProjectService","ProjectRouteService","$mdDialog","TaskConstant","ToastService"];
 
-	function ProjectMenuController($stateParams,ProjectService,ProjectRouteService,$mdDialog,TaskConstant){
+	function ProjectMenuController($stateParams,ProjectService,ProjectRouteService,$mdDialog,TaskConstant,ToastService){
 		var vm=this;
 		vm.searchText=$stateParams.search;
 		vm.hasProject=hasProject;
@@ -32,6 +32,7 @@
 			$mdDialog.show(conf)
 				.then(function(){
 					ProjectService.delete({project_id:$stateParams.id}).then(function(){
+						ToastService.info("Project deleted");
 						ProjectRouteService.blank();
 					});
 				})

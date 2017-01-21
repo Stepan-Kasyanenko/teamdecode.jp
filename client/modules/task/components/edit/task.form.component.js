@@ -6,9 +6,9 @@
 	angular.module("app.task")
 		.controller("TaskFormController",TaskFormController);
 
-	TaskFormController.$inject=["$mdSidenav","TaskRouteService","TaskService","ProjectConstant"];
+	TaskFormController.$inject=["$mdSidenav","TaskRouteService","TaskService","ProjectConstant","ToastService"];
 
-	function TaskFormController($mdSidenav,TaskRouteService,TaskService,ProjectConstant){
+	function TaskFormController($mdSidenav,TaskRouteService,TaskService,ProjectConstant,ToastService){
 		var vm=this;
 		vm.toggle=toggle;
 		vm.addTask=addTask;
@@ -45,6 +45,7 @@
 			//	TaskService.save({Project:{id:vm.projectID},Task:{title:"title "+i,description:"description "+i}});
 			//}
 			return TaskService.save(vm.task).then(function(){
+				ToastService.info("Task saved");
 				TaskRouteService.tasks({},{reload:ProjectConstant.route.selected});
 			});
 		}

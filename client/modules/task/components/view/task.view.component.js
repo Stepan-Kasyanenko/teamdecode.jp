@@ -6,9 +6,9 @@
 	angular.module("app.task")
 		.controller("TaskViewController",TaskViewController);
 
-	TaskViewController.$inject=["$mdSidenav","$mdDialog","TaskRouteService","TaskService","TaskConstant"];
+	TaskViewController.$inject=["$mdSidenav","$mdDialog","TaskRouteService","TaskService","ProjectConstant","ToastService"];
 
-	function TaskViewController($mdSidenav,$mdDialog,TaskRouteService,TaskService,TaskConstant){
+	function TaskViewController($mdSidenav,$mdDialog,TaskRouteService,TaskService,ProjectConstant,ToastService){
 		var vm=this;
 
 		vm.$onInit=onInit;
@@ -54,7 +54,8 @@
 			$mdDialog.show(conf)
 				.then(function(){
 					TaskService.delete({task_id:vm.task.Task.id}).then(function(){
-						TaskRouteService.tasks({},{reload:TaskConstant.route.tasks});
+						ToastService.info("Task deleted");
+						TaskRouteService.tasks({},{reload:ProjectConstant.route.selected});
 					});
 				})
 				.catch(angular.noop);

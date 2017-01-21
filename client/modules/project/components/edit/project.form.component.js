@@ -6,9 +6,9 @@
 	angular.module("app.project")
 		.controller("ProjectFormController",ProjectFormController);
 
-	ProjectFormController.$inject=["$mdSidenav","ProjectRouteService","ProjectService","ProjectConstant"];
+	ProjectFormController.$inject=["$mdSidenav","ProjectRouteService","ProjectService","ProjectConstant","ToastService"];
 
-	function ProjectFormController($mdSidenav,ProjectRouteService,ProjectService,ProjectConstant){
+	function ProjectFormController($mdSidenav,ProjectRouteService,ProjectService,ProjectConstant,ToastService){
 		var vm=this;
 		vm.toggle=toggle;
 		vm.addProject=addProject;
@@ -39,6 +39,7 @@
 				ProjectService.save({Project:{title:" auto project "+i}});
 			}
 			return ProjectService.save(vm.project).then(function(res){
+				ToastService.info("Project saved");
 				//we need force reload
 				ProjectRouteService.selected({id:res.Project.id},{reload:ProjectConstant.route.selected});
 			});

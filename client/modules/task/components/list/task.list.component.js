@@ -6,9 +6,9 @@
 	angular.module("app.project")
 		.controller("appProjectTaskController",appProjectTaskController);
 
-	appProjectTaskController.$inject=["TaskRouteService","TaskService","TaskConstant"];
+	appProjectTaskController.$inject=["TaskRouteService","TaskService","TaskConstant","ToastService"];
 
-	function appProjectTaskController(TaskRouteService,TaskService,TaskConstant){
+	function appProjectTaskController(TaskRouteService,TaskService,TaskConstant,ToastService){
 		var vm=this;
 		vm.select=select;
 		vm.completeTask=completeTask;
@@ -21,6 +21,7 @@
 
 		function completeTask(task){
 			return TaskService.complete(task).then(function(){
+				ToastService.info("Task completed");
 				TaskRouteService.tasks({},{reload:TaskConstant.route.tasks});
 			});
 		}

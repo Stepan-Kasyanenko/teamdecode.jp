@@ -19,7 +19,7 @@
 					$mdToast.simple()
 						.textContent(text)
 						.position("top right")
-						.hideDelay(10000)
+						.hideDelay(5000)
 						.toastClass(type)
 				);
 			}
