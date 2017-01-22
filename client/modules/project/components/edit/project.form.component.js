@@ -35,9 +35,6 @@
 		}
 
 		function addProject(){
-			for(var i=0; i<40; i++){
-				ProjectService.save({Project:{title:" auto project "+i}});
-			}
 			return ProjectService.save(vm.project).then(function(res){
 				ToastService.info("Project saved");
 				//we need force reload
