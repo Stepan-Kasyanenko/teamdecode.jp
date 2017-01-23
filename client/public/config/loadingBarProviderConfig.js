@@ -1,7 +1,10 @@
 /**
  * Created by avzal on 23.12.2016.
  */
-angular.module("config")
-	.config(function(cfpLoadingBarProvider){
-		cfpLoadingBarProvider.includeSpinner=false;
-	})
+(function(window,angular){
+    "use strict";
+	angular.module("config")
+		.config(["cfpLoadingBarProvider",function(cfpLoadingBarProvider){
+			cfpLoadingBarProvider.includeSpinner=false;
+		}])
+})(window,window.angular);
