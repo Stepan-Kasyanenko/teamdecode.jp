@@ -6,14 +6,22 @@
 	"use strict";
 	angular.module("app.project")
 		.constant('ProjectConstant',{
-			ApiUrls:{
-				project :"https://api-test-task.decodeapps.io/projects/:action",
-			},
-			route  :{
+			route:{
 				'selected':'main.projects.selected',
 				'blank'   :'main.projects.blank',
 				'edit'    :'main.projects.selected.edit',
-				'new'     :'main.projects.blank.new',
+				'new'     :'main.projects.blank.new'
 			}
-		});
-})(window,window.angular);
+		})
+		.factory('ProjectApiConstant',ProjectApiConstant);
+
+	ProjectApiConstant.$inject=["ApiConstant"];
+	function ProjectApiConstant(ApiConstant){
+		return {
+			ApiUrls:{
+				project:ApiConstant.basePath+"/projects/:action"
+			}
+		};
+	}
+})
+(window,window.angular);

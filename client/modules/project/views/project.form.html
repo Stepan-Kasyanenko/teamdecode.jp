@@ -24,7 +24,7 @@
 				<label md-colors="{color:'primary-50'}">Project name</label>
 				<input ng-model="vm.project.Project.title" md-autofocus required name="title"
 							 flex md-colors="{color:'primary-50',borderColor:'primary-50'}" type="text"
-							 md-maxlength="100">
+							 md-maxlength="255">
 				<div ng-messages="project_form.title.$error">
 					<div ng-message="required">Project name is required</div>
 				</div>

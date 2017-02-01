@@ -17,20 +17,17 @@
 	font-size:9px;
 }
 .left-sidenav{
-	width:390px;
+	width:340px;
 	overflow:hidden;
-	min-width:390px;
+	min-width:340px;
 }
 .left-sidenav .project-view{
-	height:75%;
-	width:360px;
+	height:80%;
+	width:320px;
 	overflow:auto;
 }
 .right-sidenav{
-	min-width:320px;
+	min-width:500px;
 	width:100%;
 	max-width:500px;
-}
-app-sidenav{
-	height:100%;
 }

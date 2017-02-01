@@ -10,14 +10,20 @@
 
 	function ProjectMenuController($stateParams,ProjectService,ProjectRouteService,$mdDialog,TaskConstant,ToastService){
 		var vm=this;
+		vm.$onInit=onInit;
+		vm.isShowSearch=false;
 		vm.searchText=$stateParams.search;
-		vm.hasProject=hasProject;
 		vm.editProject=editProject;
 		vm.deleteProject=deleteProject;
 		vm.searchTasks=searchTasks;
+		vm.toogleSearch=toogleSearch;
 
-		function hasProject(){
-			return !!$stateParams.id;
+		function onInit(){
+			vm.isShowSearch= !!vm.searchText;
+		}
+
+		function toogleSearch(){
+			vm.isShowSearch= !vm.isShowSearch;
 		}
 
 		function editProject(){
@@ -41,7 +47,11 @@
 		}
 
 		function searchTasks(){
-			ProjectRouteService.selected({search:vm.searchText},{reload:TaskConstant.route.tasks});
+			if(vm.searchText===undefined)
+				ProjectRouteService.selected({search:vm.searchText},{reload:false});
+			else
+				ProjectRouteService.selected({search:vm.searchText},{reload:TaskConstant.route.tasks});
 		}
+
 	}
 })(window,window.angular);

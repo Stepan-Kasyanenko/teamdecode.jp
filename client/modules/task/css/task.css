@@ -2,8 +2,7 @@ app-project-task-list{
 	width:100%;
 	height:100%;
 }
-app-project-task-list .task-not-found-content
-{
+app-project-task-list .task-not-found-content{
 	overflow-y:hidden;
 	height:80% !important;
 	min-height:80% !important;
@@ -22,6 +21,20 @@ app-project-task-list .task{
 }
 app-project-task-list .task .task-item{
 	border-radius:6px;
+	padding:6px;
+}
+app-project-task-list .task .task-item md-list{
+	padding-bottom:0;
+	padding-top:0;
+}
+app-project-task-list .task .task-item md-list-item{
+	height:78px;
+}
+app-project-task-list .task .task-item .md-button:hover{
+	background-color:transparent !important;
+}
+app-project-task-list .task .task-item .md-focused{
+	background-color:transparent !important;
 }
 app-project-task-list .task .task-group{
 	font-size:16px;
@@ -49,7 +62,6 @@ app-project-task-list .task .task-button{
 	width:40px;
 	min-width:40px;
 }
-
 app-project-task-view .btn-action-task{
 	color:#51555e !important;
 	width:26px;
@@ -62,16 +74,19 @@ app-project-task-view .btn-action-task{
 app-project-task-view .task-view{
 	width:340px;
 }
-
 app-task-add .btn-add-task{
 	position:fixed;
 	bottom:36px;
 	right:50px;
+	width:50px !important;
+	height:50px !important;;
+	line-height:50px !important;;
 }
 app-project-task-form .btn-add-task{
 	position:fixed;
 	bottom:36px;
 	right:50px;
-}app-project-task-form .task-form{
-	 width:340px;
- }
+}
+app-project-task-form .task-form{
+	width:340px;
+}

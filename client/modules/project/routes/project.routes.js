@@ -14,7 +14,7 @@
 		$stateProvider
 			.state('main.projects',{
 				url     :'projects',
-				abstract:true,
+				abstract:true
 			})
 			.state(ProjectConstant.route.blank,{
 				url      :'',

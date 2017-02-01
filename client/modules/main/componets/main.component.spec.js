@@ -12,5 +12,4 @@
 				session:"<"
 			}
 		});
-
 })(window,window.angular);

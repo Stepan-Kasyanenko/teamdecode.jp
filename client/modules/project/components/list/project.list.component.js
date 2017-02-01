@@ -13,7 +13,7 @@
 		vm.select=select;
 
 		function select(project){
-			ProjectRouteService.selected({id:project.id,paging_size:undefined})
+			ProjectRouteService.selected({id:project.id,paging_size:undefined,search:undefined})
 				.then(function(){
 					vm.selectedID=project.id;
 				});

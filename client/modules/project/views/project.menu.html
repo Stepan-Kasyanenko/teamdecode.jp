@@ -1,36 +1,28 @@
 <md-toolbar md-colors="{background:'primary-50'}" layout="row" class="layout-row">
-	<div use-visibility="vm.hasProject()" class="md-toolbar-tools">
-		<md-icon md-colors="{color:'accent-A100'}">
-			<span class="b-size" data-size="26"><i class="icons8-search"></i></span>
-		</md-icon>
-		&nbsp;
-		<use-search md-colors="{background:'primary-50'}" flex class="search-button" ng-model="vm.searchText" on-search="vm.searchTasks()" pending="1000"></use-search>
-		<md-menu md-offset="0 60">
+	<div class="md-toolbar-tools">
+		<md-button ng-click="vm.toogleSearch()" class="btn-search" aria-label="search">
+			<md-tooltip>Search</md-tooltip>
+			<md-icon md-colors="{color:'accent-A100'}">
+				<span class="b-size" data-size="26"><i class="icons8-search"></i></span>
+			</md-icon>
+		</md-button>
+		<use-search ng-show="vm.isShowSearch" md-colors="{background:'primary-50'}" flex class="search-input animate-show-hide" ng-model="vm.searchText" on-search="vm.searchTasks()" clear-button="true" pending="1000"></use-search>
+		<md-menu class="project-setting">
 			<md-button class="md-primary btn-close" aria-label="setting project" ng-click="$mdOpenMenu($event)">
 				<md-icon md-colors="{color:'accent-A100'}" md-menu-origin>
-							<span class="b-size" data-size="26">
-								<i class="icons8-more"></i>
-							</span>
+					<span class="b-size" data-size="26">
+					<i class="icons8-more"></i>
+					</span>
 				</md-icon>
 			</md-button>
-			<md-menu-content width="1">
+			<md-menu-content>
 				<md-menu-item>
 					<md-button class="md-primary" use-ajax-click="vm.editProject()">
-						<md-icon md-colors="{color:'accent-A100'}" md-menu-origin aria-label="edit project">
-									<span class="b-size" data-size="18">
-										<i class="icons8-edit"></i>
-									</span>
-						</md-icon>
 						Edit
 					</md-button>
 				</md-menu-item>
 				<md-menu-item>
 					<md-button class="md-primary" use-ajax-click="vm.deleteProject()">
-						<md-icon md-colors="{color:'accent-A100'}" md-menu-origin aria-label="delete project">
-									<span class="b-size" data-size="18">
-										<i class="icons8-delete"></i>
-									</span>
-						</md-icon>
 						Delete
 					</md-button>
 				</md-menu-item>

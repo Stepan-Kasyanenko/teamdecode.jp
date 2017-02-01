@@ -7,9 +7,9 @@
 		.service("ProjectResource",ProjectResource)
 		.service("ProjectService",ProjectService);
 
-	ProjectResource.$inject=["$resource","ProjectConstant"];
-	function ProjectResource($resource,ProjectConstant){
-		return $resource(ProjectConstant.ApiUrls.project,{action:"project"},{query:{method:"GET",isArray:false,params:{action:""}}});
+	ProjectResource.$inject=["$resource","ProjectApiConstant"];
+	function ProjectResource($resource,ProjectApiConstant){
+		return $resource(ProjectApiConstant.ApiUrls.project,{action:"project"},{query:{method:"GET",isArray:false,params:{action:""}}});
 	}
 
 	ProjectService.$inject=["ProjectResource"];

@@ -18,6 +18,9 @@
 					},
 					'project-task-add@main':{
 						component:'appTaskAdd'
+					},
+					'project-menu@main'    :{
+						component:'appProjectMenu',
 					}
 				},
 				resolve       :{

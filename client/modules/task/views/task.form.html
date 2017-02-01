@@ -22,7 +22,7 @@
 			<md-input-container layout-fill>
 				<label md-colors="{color:'primary-50'}">Task name</label>
 				<input flex md-colors="{color:'primary-50',borderColor:'primary-50'}" type="text"
-							 md-maxlength="100"
+							 md-maxlength="255"
 							 ng-model="vm.task.Task.title" md-autofocus required name="title">
 				<div ng-messages="task_form.title.$error">
 					<div ng-message="required">Task name is required</div>
@@ -30,7 +30,7 @@
 			</md-input-container>
 			<md-input-container layout-fill>
 				<label md-colors="{color:'primary-50'}">Description</label>
-				<textarea ng-model="vm.task.Task.description" required md-maxlength="1000"
+				<textarea ng-model="vm.task.Task.description" md-maxlength="255"
 									flex md-colors="{color:'primary-50',borderColor:'primary-50'}"
 							  	name="description"></textarea>
 				<div ng-messages="task_form.description.$error">

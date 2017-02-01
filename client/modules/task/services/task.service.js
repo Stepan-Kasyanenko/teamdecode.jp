@@ -5,14 +5,14 @@
 		.service("TasksResource",TasksResource)
 		.service("TaskService",TaskService);
 
-	TaskResource.$inject=["$resource","TaskConstant"];
-	function TaskResource($resource,TaskConstant){
-		return $resource(TaskConstant.ApiUrls.task,{action:""},{complete:{method:"POST",params:{action:"complete"},isArray:false}});
+	TaskResource.$inject=["$resource","TaskApiConstant"];
+	function TaskResource($resource,TaskApiConstant){
+		return $resource(TaskApiConstant.ApiUrls.task,{action:""},{complete:{method:"POST",params:{action:"complite"},isArray:false}});
 	}
 
-	TasksResource.$inject=["$resource","TaskConstant"];
-	function TasksResource($resource,TaskConstant){
-		return $resource(TaskConstant.ApiUrls.tasks,{},{query:{method:"GET",isArray:false}});
+	TasksResource.$inject=["$resource","TaskApiConstant"];
+	function TasksResource($resource,TaskApiConstant){
+		return $resource(TaskApiConstant.ApiUrls.tasks,{},{query:{method:"GET",isArray:false}});
 	}
 
 	TaskService.$inject=["TaskResource","TasksResource","TaskConstant","moment"];
