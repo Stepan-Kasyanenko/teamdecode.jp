@@ -6,7 +6,8 @@
 	angular.module("use")
 		.directive("useSearch",useSearch);
 
-	function useSearch(){
+	useSearch.$inject=["$timeout"];
+	function useSearch($timeout){
 		return {
 			restrict        :"E",
 			replace         :true,
@@ -20,12 +21,17 @@
 			bindToController:true,
 			controller      :useSearchController,
 			controllerAs    :"vm",
-			template        :['<span><input class="useSearchInput" style="border:1px solid #eee;padding:6px 4px;border-right:0px;" md-colors="vm.mdColors" ng-model="vm.ngModel" ng-change="vm.pendingSearch()" aria-label="search" placeholder="Search..." />',
+			template        :['<span><input autofocus tabindex="1" class="useSearchInput" style="border:1px solid #eee;padding:6px 4px;border-right:0px;" md-colors="vm.mdColors" ng-model="vm.ngModel" ng-change="vm.pendingSearch()" aria-label="search" placeholder="Search..." />',
 												'<md-button style="padding:0px;width:30px;min-width:30px;border:1px solid #eee;border-left:0px;height:37px;margin-left:0;margin-bottom:2px;" ng-show="vm.clearButton" ng-click="vm.clearSearch()" class="btn-clear-search" aria-label="Clear search">',
 												'<md-tooltip>Clear search</md-tooltip>',
 												'<span md-colors="{color:\'accent-A100\'}" class="b-size" data-size="26"><i class="icons8-delete-2"></i></span>',
 												'</md-button>',
 												'<style type="text/css">.useSearchInput:focus{outline:0}</style></span>'].join(""),
+			link            :function(scope,elem){
+				if(scope.vm.ngModel){
+					$timeout(function(){elem.find('input').focus();},200);
+				}
+			}
 		};
 	}
 
