@@ -76,16 +76,19 @@ app-project-task-view .task-view{
 }
 app-task-add .btn-add-task{
 	position:fixed;
-	bottom:36px;
-	right:50px;
+	bottom:31px;
+	right:31px;
 	width:50px !important;
 	height:50px !important;;
 	line-height:50px !important;;
 }
 app-project-task-form .btn-add-task{
 	position:fixed;
-	bottom:36px;
-	right:50px;
+	bottom:31px;
+	right:31px;
+	width:50px !important;
+	height:50px !important;;
+	line-height:50px !important;;
 }
 app-project-task-form .task-form{
 	width:340px;

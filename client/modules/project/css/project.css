@@ -19,9 +19,9 @@ app-project-list .md-list-project-action p{
 }
 app-project-form .btn-add-project{
 	position:fixed;
-	bottom:36px;
-	right:50px;
-	width:50px !important;;
+	bottom:31px;
+	right:31px;
+	width:50px !important;
 	height:50px !important;;
 	line-height:50px !important;;
 }
